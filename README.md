@@ -1,2 +1,4 @@
 # portfolio-v3
-implementing web design fundamentals -and- github repo list
+* implementing web design fundamentals
+* displaying github repo list
+* figma design prototyping
