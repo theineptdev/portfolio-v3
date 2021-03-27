@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <div class="btn-close">X</div>
         <div class="sections">
             <div class="about">about</div>
             <div class="works">works</div>
@@ -35,5 +34,23 @@
     display: grid;
     place-items: center;
     border: 2px solid red;
+}
+
+.sections {
+    position: absolute;
+    border: 1px solid red;
+    color: white;
+    font-size: 3em;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+.links {
+    position: absolute;
+    /* transform maintains translation relative to center */
+    transform: translateY(15em);
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
 }
 </style>

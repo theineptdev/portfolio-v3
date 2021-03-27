@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <button class="btn-nav" @click="toggleNav(true)">on</button>
-    <button class="btn-nav2" @click="toggleNav(false)">off</button>
+    <button class="btn-nav" @click="toggleNav()">NAV</button>
     <navi class="navi" />
     <top class="top" />
     <about />
@@ -19,6 +18,11 @@ import contact from "./components/Contact.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      navBoolean: true,
+    }
+  },
   components: {
     navi,
     top,
@@ -27,8 +31,8 @@ export default {
     contact
   },
   methods: {
-    toggleNav(boolean) {
-      if (boolean) {
+    toggleNav() {
+      if (this.navBoolean) {
         // document.getElementsByClassName('top')[0]
         //   .style.visibility = 'hidden';
         document.querySelectorAll('*')[0].style.overflowY = 'hidden';
@@ -38,6 +42,7 @@ export default {
           .style.visibility = 'visible';
         document.getElementsByClassName('navi')[0]
           .style.opacity = '100%';
+        this.navBoolean = !this.navBoolean
       } else {
         // document.getElementsByClassName('top')[0]
         //   .style.visibility = 'visible';
@@ -48,6 +53,7 @@ export default {
           .style.visibility = 'hidden';
         document.getElementsByClassName('navi')[0]
           .style.opacity = '0%';
+        this.navBoolean = !this.navBoolean
       }
     }
   }
@@ -71,13 +77,7 @@ export default {
   color: black;
   background: white;
   position: fixed;
-}
-.btn-nav2 {
-  z-index: 1;
-  left: 50px;
-  color: black;
-  background: white;
-  position: fixed;
+  right: 0;
 }
 
 .navi {
