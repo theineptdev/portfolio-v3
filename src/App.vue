@@ -20,7 +20,6 @@ export default {
   name: "App",
   data() {
     return {
-      navBoolean: true,
     }
   },
   components: {
@@ -32,29 +31,8 @@ export default {
   },
   methods: {
     toggleNav() {
-      if (this.navBoolean) {
-        // document.getElementsByClassName('top')[0]
-        //   .style.visibility = 'hidden';
-        document.querySelectorAll('*')[0].style.overflowY = 'hidden';
-        document.getElementsByClassName('top')[0]
-          .style.opacity = '0%';
-        document.getElementsByClassName('navi')[0]
-          .style.visibility = 'visible';
-        document.getElementsByClassName('navi')[0]
-          .style.opacity = '100%';
-        this.navBoolean = !this.navBoolean
-      } else {
-        // document.getElementsByClassName('top')[0]
-        //   .style.visibility = 'visible';
-        document.querySelectorAll('*')[0].style.overflowY = 'visible';
-        document.getElementsByClassName('top')[0]
-          .style.opacity = '100%';
-        document.getElementsByClassName('navi')[0]
-          .style.visibility = 'hidden';
-        document.getElementsByClassName('navi')[0]
-          .style.opacity = '0%';
-        this.navBoolean = !this.navBoolean
-      }
+      console.log(this.$store.state.navBoolean)
+      this.$store.commit("toggleNav");
     }
   }
 };
