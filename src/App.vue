@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <navi />
-    <top />
+    <button class="btn-nav" @click="toggleNav(true)">on</button>
+    <button class="btn-nav2" @click="toggleNav(false)">off</button>
+    <navi class="navi" />
+    <top class="top" />
     <about />
     <works />
     <contact />
@@ -9,7 +11,7 @@
 </template>
 
 <script>
-import navi from "./components/Nav.vue";
+import navi from "./components/Navi.vue";
 import top from "./components/Top.vue";
 import about from "./components/About.vue";
 import works from "./components/Works.vue";
@@ -24,6 +26,31 @@ export default {
     works,
     contact
   },
+  methods: {
+    toggleNav(boolean) {
+      if (boolean) {
+        // document.getElementsByClassName('top')[0]
+        //   .style.visibility = 'hidden';
+        document.querySelectorAll('*')[0].style.overflowY = 'hidden';
+        document.getElementsByClassName('top')[0]
+          .style.opacity = '0%';
+        document.getElementsByClassName('navi')[0]
+          .style.visibility = 'visible';
+        document.getElementsByClassName('navi')[0]
+          .style.opacity = '100%';
+      } else {
+        // document.getElementsByClassName('top')[0]
+        //   .style.visibility = 'visible';
+        document.querySelectorAll('*')[0].style.overflowY = 'visible';
+        document.getElementsByClassName('top')[0]
+          .style.opacity = '100%';
+        document.getElementsByClassName('navi')[0]
+          .style.visibility = 'hidden';
+        document.getElementsByClassName('navi')[0]
+          .style.opacity = '0%';
+      }
+    }
+  }
 };
 </script>
 
@@ -36,6 +63,32 @@ export default {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+.btn-nav {
+  z-index: 1;
+  color: black;
+  background: white;
+  position: fixed;
+}
+.btn-nav2 {
+  z-index: 1;
+  left: 50px;
+  color: black;
+  background: white;
+  position: fixed;
+}
+
+.navi {
+  visibility: hidden;
+  opacity: 0%;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+.top {
+  visibility: visible;
+  opacity: 100%;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }
 </style>
