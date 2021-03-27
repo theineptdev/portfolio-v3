@@ -22,10 +22,11 @@ import * as dat from 'dat.gui';
         methods: {
             init() {
                 // Loading
+                /*
                 const textureLoader = new THREE.TextureLoader();
 
                 const normalTexture = textureLoader.load(this.normalTexture);
-
+                */
                 // Debug
                 const gui = new dat.GUI();
 
@@ -34,23 +35,22 @@ import * as dat from 'dat.gui';
 
                 // Scene
                 const scene = new THREE.Scene();
-                // scene.background = new THREE.Color( 0xffffff ); //background can be changed here or made alpha: true in the renderer for website default
+                scene.background = new THREE.Color( 0xffffff ); //background can be changed here or made alpha: true in the renderer for website default
 
                 // Objects
-                const sphereGeometry = new THREE.SphereBufferGeometry(.5, 64, 64);
+                const geometry = new THREE.BoxGeometry(1, 1, 1);
 
                 // Materials
 
                 const material = new THREE.MeshStandardMaterial(); //"allows you to convey the real world as much as possible"
-                material.metalness = 0.7;
-                material.roughness = 0.2;
-                material.normalMap = normalTexture;
-
-                material.color = new THREE.Color(0x292929);
+                material.metalness = 0;
+                material.roughness = 1;
+                //material.normalMap = normalTexture;
+                material.color = new THREE.Color(0x404040);
 
                 // Mesh
-                const sphere = new THREE.Mesh(sphereGeometry, material);
-                scene.add(sphere);
+                const shape = new THREE.Mesh(geometry, material);
+                scene.add(shape);
 
                 // Lights
 
@@ -137,7 +137,7 @@ import * as dat from 'dat.gui';
                 );
                 camera.position.x = 0;
                 camera.position.y = 0;
-                camera.position.z = 2;
+                camera.position.z = 3;
                 scene.add(camera);
 
                 // Controls
@@ -149,7 +149,7 @@ import * as dat from 'dat.gui';
                 */
                 const renderer = new THREE.WebGLRenderer({
                     canvas: canvas,
-                    alpha: true,
+                    alpha: false,
                 });
                 renderer.setSize(sizes.width, sizes.height);
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -174,11 +174,11 @@ import * as dat from 'dat.gui';
                     mouseY = (event.clientY -windowHalfY);
                 }
 
-                const updateSphere = (event) => {
-                    sphere.position.y = window.scrollY * .001;
+                const updateShape = (event) => {
+                    shape.position.y = window.scrollY * .001;
                 }
 
-                window.addEventListener('scroll', updateSphere);
+                window.addEventListener('scroll', updateShape);
 
 
 
@@ -192,11 +192,12 @@ import * as dat from 'dat.gui';
                     const elapsedTime = clock.getElapsedTime();
 
                     // Update objects
-                    sphere.rotation.y = 0.25 * elapsedTime;
+                    shape.rotation.y = 0.25 * elapsedTime;
+                    shape.rotation.z = 0.225 * elapsedTime;
 
-                    sphere.rotation.y += .5 * (targetX - sphere.rotation.y)
-                    sphere.rotation.x += .05 * (targetY - sphere.rotation.x)
-                    sphere.position.z += -.05 * (targetY - sphere.rotation.x)
+                    shape.rotation.y += .5 * (targetX - shape.rotation.y)
+                    shape.rotation.x += .05 * (targetY - shape.rotation.x)
+                    shape.position.z += -.05 * (targetY - shape.rotation.x)
 
                     // Update Orbital Controls
                     // controls.update()
@@ -226,10 +227,10 @@ import * as dat from 'dat.gui';
     top: 0;
     left: 0;
     outline: none;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
 }
 .title-container {
-    background: rgb(24, 24, 24);
+    /* background: white; */
     height: 100vh;
     display: grid;
     place-items: center;
@@ -239,6 +240,7 @@ import * as dat from 'dat.gui';
     width: 100%;
 }
 .title {
+    color: white;
     font-size: 3em;
     text-transform: lowercase;
 }
