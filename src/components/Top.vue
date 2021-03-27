@@ -28,14 +28,15 @@ import * as dat from 'dat.gui';
                 const normalTexture = textureLoader.load(this.normalTexture);
                 */
                 // Debug
-                const gui = new dat.GUI();
+                //const gui = new dat.GUI();
 
                 // Canvas
                 const canvas = document.querySelector('canvas.webgl');
 
                 // Scene
                 const scene = new THREE.Scene();
-                scene.background = new THREE.Color( 0xffffff ); //background can be changed here or made alpha: true in the renderer for website default
+                scene.background = new THREE.Color( 0xffffff )
+                //scene.background = new THREE.Color( 0xffffff ); //background can be changed here or made alpha: true in the renderer for website default
 
                 // Objects
                 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -46,7 +47,24 @@ import * as dat from 'dat.gui';
                 material.metalness = 0;
                 material.roughness = 1;
                 //material.normalMap = normalTexture;
-                material.color = new THREE.Color(0x404040);
+                material.color = new THREE.Color(0xffffff);
+                //material.color = new THREE.Color(0x404040);
+                
+                /*
+                const mat = gui.addFolder('Material');
+
+                const materialColor = {
+                    color: 0xc0c0c
+                }
+
+                mat.add(material, 'metalness').min(0).max(1).step(0.01);
+                mat.add(material, 'roughness').min(0).max(1).step(0.01);
+
+                mat.addColor(materialColor, 'color')
+                    .onChange(() => {
+                        material.color.set(materialColor.color);
+                    })
+                */
 
                 // Mesh
                 const shape = new THREE.Mesh(geometry, material);
@@ -54,19 +72,33 @@ import * as dat from 'dat.gui';
 
                 // Lights
 
-                const pointLight = new THREE.PointLight(0xffffff, 0.1);
-                pointLight.position.x = 2;
-                pointLight.position.y = 3;
-                pointLight.position.z = 4;
+                const pointLight = new THREE.PointLight(0xffffff);
+                pointLight.position.set(0,0,1.35);
+                pointLight.intensity = 0;
+
                 scene.add(pointLight);
 
+                /*
+                const light = gui.addFolder('Light');
+
+                light.add(pointLight.position, 'y').min(-3).max(3).step(0.01);
+                light.add(pointLight.position, 'x').min(-6).max(6).step(0.01);
+                light.add(pointLight.position, 'z').min(-3).max(3).step(0.01);
+                light.add(pointLight, 'intensity').min(0).max(10).step(0.01);
+
+                // const pointLightHelper = new THREE.PointLightHelper(pointLight, 1);
+                // scene.add(pointLightHelper);
+                */
+
                 // Light 2
-                const pointLight2 = new THREE.PointLight(0xff0000, 2);
-                pointLight2.position.set(-1.86, 1, -1.65);
-                pointLight2.intensity = 10
+                const pointLight2 = new THREE.PointLight(0xffffff, 2);
+                //const pointLight2 = new THREE.PointLight(0xff0000, 2);
+                pointLight2.position.set(-1.21, 1, 2.17);
+                pointLight2.intensity = 0.15
 
                 scene.add(pointLight2);
 
+                /*
                 const light2 = gui.addFolder('Light 2');
 
                 light2.add(pointLight2.position, 'y').min(-3).max(3).step(0.01);
@@ -74,16 +106,28 @@ import * as dat from 'dat.gui';
                 light2.add(pointLight2.position, 'z').min(-3).max(3).step(0.01);
                 light2.add(pointLight2, 'intensity').min(0).max(10).step(0.01);
 
-                // const pointLightHelper = new THREE.PointLightHelper(pointLight2, 1);
-                // scene.add(pointLightHelper);
+                const light2Color = {
+                    color: 0xff0000
+                }
+
+                light2.addColor(light2Color, 'color')
+                    .onChange(() => {
+                        pointLight2.color.set(light2Color.color);
+                    })
+
+                // const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1);
+                // scene.add(pointLightHelper2);
+                */
 
                 // Light 3
-                const pointLight3 = new THREE.PointLight(0x96ff, 2);
-                pointLight3.position.set(1.97, -1.27, -1.6);
-                pointLight3.intensity = 10
+                const pointLight3 = new THREE.PointLight(0xffffff, 2);
+                //const pointLight3 = new THREE.PointLight(0xff0000, 2);
+                pointLight3.position.set(1.21, -1, 2.17);
+                pointLight3.intensity = 0.15
 
                 scene.add(pointLight3);
 
+                /*
                 const light3 = gui.addFolder('Light 3');
 
                 light3.add(pointLight3.position, 'y').min(-3).max(3).step(0.01);
@@ -100,8 +144,9 @@ import * as dat from 'dat.gui';
                         pointLight3.color.set(light3Color.color);
                     })
 
-                // const pointLightHelper2 = new THREE.PointLightHelper(pointLight3, 1);
-                // scene.add(pointLightHelper2);
+                // const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1);
+                // scene.add(pointLightHelper3);
+                */
 
                 /**
                 * Sizes

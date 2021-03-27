@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navi />
     <top />
     <about />
     <works />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import navi from "./components/Nav.vue";
 import top from "./components/Top.vue";
 import about from "./components/About.vue";
 import works from "./components/Works.vue";
@@ -16,6 +18,7 @@ import contact from "./components/Contact.vue";
 export default {
   name: "App",
   components: {
+    navi,
     top,
     about,
     works,
