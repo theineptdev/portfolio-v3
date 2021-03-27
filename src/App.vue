@@ -3,9 +3,9 @@
     <button class="btn-nav" @click="toggleNav()">NAV</button>
     <navi class="navi" />
     <top class="top" />
-    <about />
-    <works />
-    <contact />
+    <about id="about"/>
+    <works id="works"/>
+    <contact id="contact"/>
   </div>
 </template>
 
@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     toggleNav() {
-      console.log(this.$store.state.navBoolean)
       this.$store.commit("toggleNav");
     }
   }
@@ -51,7 +50,7 @@ export default {
 }
 
 .btn-nav {
-  z-index: 1;
+  z-index: 2;
   color: black;
   background: white;
   position: fixed;
@@ -59,6 +58,7 @@ export default {
 }
 
 .navi {
+  z-index: 1;
   visibility: hidden;
   opacity: 0%;
   transition: visibility 0s linear 0s, opacity 300ms;

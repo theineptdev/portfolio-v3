@@ -1,9 +1,9 @@
 <template>
     <div class="container">
         <div class="sections">
-            <div class="about">about</div>
-            <div class="works">works</div>
-            <div class="contact">contact</div>
+            <div class="about" @click="navTo('about'), toggleNav()">about</div>
+            <div class="works" @click="navTo('works'), toggleNav()">works</div>
+            <div class="contact" @click="navTo('contact'), toggleNav()">contact</div>
         </div>
         <div class="links">
             <div class="twitter">T</div>
@@ -20,6 +20,14 @@
             return {
 
             }
+        },
+        methods: {
+            toggleNav() {
+                this.$store.commit("toggleNav");
+            },
+            navTo(section) {
+                this.$store.commit("navTo", section);
+            }
         }
     }
 </script>
@@ -33,7 +41,6 @@
     width: 100%;
     display: grid;
     place-items: center;
-    border: 2px solid red;
 }
 
 .sections {

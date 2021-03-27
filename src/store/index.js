@@ -32,6 +32,14 @@ export default new Vuex.Store({
           .style.opacity = '0%';
         this.state.navBoolean = !this.state.navBoolean
       }
+    },
+    navTo(state, section) {
+      document.getElementById(section).scrollIntoView({
+        behavior: 'smooth'});
+      // setTimeout(function() {
+      //   document.getElementById(section).scrollIntoView({
+      //     behavior: 'smooth'});
+      // }, 50);
     }
   },
   actions: {},
