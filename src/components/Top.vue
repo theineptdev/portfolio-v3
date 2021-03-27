@@ -175,7 +175,7 @@ import * as dat from 'dat.gui';
                 }
 
                 const updateShape = (event) => {
-                    shape.position.y = window.scrollY * .001;
+                    shape.position.y = window.scrollY * -.006;
                 }
 
                 window.addEventListener('scroll', updateShape);
