@@ -61,14 +61,13 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: white;
     font-size: 3em;
     text-transform: lowercase;
     height: 10rem; /*rough estimate of selection height */
     cursor: pointer;
 }
-.sections a:hover {
-    color: rgba(255, 255, 255, 0.452);
+.sections a {
+    transition: 0.15s ease-in-out;
 }
 
 .links {
@@ -90,18 +89,25 @@
 
 .fa-ico {
     cursor: pointer;
+    transition: 0.15s ease-in-out;
 }
 
-.twitter .fa-ico:hover {
-    color: rgb(109, 184, 255);
-}
-.linkedin .fa-ico:hover {
-    color: rgb(105, 88, 255);
-}
-.github .fa-ico:hover {
-    color: rgb(221, 110, 255);
-}
-.garden .fa-ico:hover {
-    color: rgb(83, 218, 70);
+@media only screen and (min-width: 768px) {
+    .sections a:hover {
+        color: rgba(255, 255, 255, 0.452);
+    }
+    
+    .twitter .fa-ico:hover {
+        color: rgb(109, 184, 255);
+    }
+    .linkedin .fa-ico:hover {
+        color: rgb(105, 88, 255);
+    }
+    .github .fa-ico:hover {
+        color: rgb(221, 110, 255);
+    }
+    .garden .fa-ico:hover {
+        color: rgb(83, 218, 70);
+    }
 }
 </style>

@@ -84,9 +84,7 @@ export default {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-.btn-nav:hover {
-  color: white;
+  transition: 0.15s ease-in-out;
 }
 
 
@@ -104,21 +102,29 @@ export default {
   color: rgb(105, 105, 105);
   mix-blend-mode: difference; /* keep button visible */
   cursor: pointer;
-}
-.down-ico:hover {
-  color: white;
+  transition: 0.15s ease-in-out;
 }
 
 .navi {
   z-index: 2;
   visibility: hidden;
   opacity: 0%;
-  transition: visibility 0s linear 0s, opacity 300ms;
+  transition: 0.15s ease-in-out;
 }
 
 .top {
   visibility: visible;
   opacity: 100%;
-  transition: visibility 0s linear 0s, opacity 300ms;
+  transition: 0.15s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-nav:hover {
+    color: white;
+  }
+  
+  .down-ico:hover {
+    color: white;
+  }
 }
 </style>
