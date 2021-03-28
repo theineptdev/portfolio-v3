@@ -71,7 +71,7 @@ export default {
 
 .btn-nav {
   z-index: 3;
-  color: white;
+  color: rgb(105, 105, 105);
   mix-blend-mode: difference; /* keep button visible */
   position: fixed;
   top: 1.5em;
@@ -86,7 +86,7 @@ export default {
   cursor: pointer;
 }
 .btn-nav:hover {
-  color: red;
+  color: white;
 }
 
 
@@ -101,12 +101,12 @@ export default {
 
 .down-ico {
   z-index: 2;
-  color: white;
+  color: rgb(105, 105, 105);
   mix-blend-mode: difference; /* keep button visible */
   cursor: pointer;
 }
 .down-ico:hover {
-  color: red;
+  color: white;
 }
 
 .navi {

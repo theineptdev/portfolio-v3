@@ -4,9 +4,9 @@
         <div class="email">contact@gunnerclark.dev</div>
         <div class="links">
             <a class="twitter">Twitter</a>
-            <a class="twitter">LinkedIn</a>
-            <a class="twitter">GitHub</a>
-            <a class="twitter">Blog</a>
+            <a class="linkedin">LinkedIn</a>
+            <a class="github">GitHub</a>
+            <a class="garden">Blog</a>
         </div>
     </div>
 </template>
@@ -49,5 +49,17 @@
 }
 .links a:hover {
     cursor: pointer;
+}
+.twitter:hover {
+    color: rgb(109, 184, 255);
+}
+.linkedin:hover {
+    color: rgb(105, 88, 255);
+}
+.github:hover {
+    color: rgb(221, 110, 255);
+}
+.garden:hover {
+    color: rgb(83, 218, 70);
 }
 </style>

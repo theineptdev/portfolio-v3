@@ -293,7 +293,7 @@ import * as dat from 'dat.gui';
     height: 100vh;
     width: 100%;
     /* remove background to remove color */
-    background: rgb(216, 58, 58);
+    /* background: rgb(216, 58, 58); */
 }
 .title {
     color: white;

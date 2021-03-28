@@ -8,16 +8,16 @@
         </div>
         <div class="links">
             <a class="twitter">
-                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" />
+                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" title="Twitter" />
             </a>
             <a class="linkedin">
-                <fa-ico class="fa-ico" :icon="['fab', 'linkedin']" />
+                <fa-ico class="fa-ico" :icon="['fab', 'linkedin']" title="LinkedIn" />
             </a>
             <a class="github">
-                <fa-ico class="fa-ico" :icon="['fab', 'github']" />
+                <fa-ico class="fa-ico" :icon="['fab', 'github']" title="GitHub" />
             </a>
             <a class="garden">
-                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" />
+                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" title="Garden" />
             </a>
         </div>
     </div>
@@ -91,7 +91,17 @@
 .fa-ico {
     cursor: pointer;
 }
-.fa-ico:hover {
-    color: rgba(255, 255, 255, 0.452);
+
+.twitter .fa-ico:hover {
+    color: rgb(109, 184, 255);
+}
+.linkedin .fa-ico:hover {
+    color: rgb(105, 88, 255);
+}
+.github .fa-ico:hover {
+    color: rgb(221, 110, 255);
+}
+.garden .fa-ico:hover {
+    color: rgb(83, 218, 70);
 }
 </style>
