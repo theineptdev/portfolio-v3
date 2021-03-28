@@ -31,25 +31,29 @@
 .title {
     font-size: 2.5em;
     text-transform: uppercase;
+    padding: 2em;
 }
 
 .repo-ref {
-    border: 1px solid red;
     margin: 0 auto;
-    width: calc(100vw/3);
+    max-width: 35em;
+    padding-bottom: 2.5em;
 }
 .repo-title {
+    border: 1px solid red;
     font-size: 1.75em;
     text-transform: lowercase;
     display: inline-flex;
 }
 .repo-lang {
+    border: 1px solid red;
     font-size: 1.75em;
     font-variant: small-caps;
     color: rgb(126, 126, 126);
     display: inline-flex;
 }
 .repo-desc {
+    border: 1px solid red;
     font-size: 1.25em;
     color: rgb(90, 90, 90);
 }

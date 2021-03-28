@@ -70,7 +70,7 @@ export default {
 }
 
 .btn-nav {
-  z-index: 2;
+  z-index: 3;
   color: white;
   mix-blend-mode: difference; /* keep button visible */
   position: fixed;
@@ -80,15 +80,13 @@ export default {
   font-size: 1.5em;
   padding: 0;
   display: flex; /* makes icon & div correct size */
-  border: 1px solid red;
   width: 1em;
   justify-content: center;
   align-items: center;
-}
-
-.btn-nav:hover {
-  color: rgb(187, 42, 42);
   cursor: pointer;
+}
+.btn-nav:hover {
+  color: red;
 }
 
 
@@ -105,14 +103,14 @@ export default {
   z-index: 2;
   color: white;
   mix-blend-mode: difference; /* keep button visible */
-  border: 1px solid red;
+  cursor: pointer;
 }
 .down-ico:hover {
   color: red;
 }
 
 .navi {
-  z-index: 1;
+  z-index: 2;
   visibility: hidden;
   opacity: 0%;
   transition: visibility 0s linear 0s, opacity 300ms;

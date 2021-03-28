@@ -1,23 +1,24 @@
 <template>
     <div class="container">
+        <div class="buffer"></div>
         <div class="sections">
-            <div class="about" @click="navTo('about'), toggleNav()">about</div>
-            <div class="works" @click="navTo('works'), toggleNav()">works</div>
-            <div class="contact" @click="navTo('contact'), toggleNav()">contact</div>
+            <a class="about" @click="navTo('about'), toggleNav()">about</a>
+            <a class="works" @click="navTo('works'), toggleNav()">works</a>
+            <a class="contact" @click="navTo('contact'), toggleNav()">contact</a>
         </div>
         <div class="links">
-            <div class="twitter">
-                <fa-ico :icon="['fab', 'twitter']" />
-            </div>
-            <div class="linkedin">
-                <fa-ico :icon="['fab', 'linkedin-in']" />
-            </div>
-            <div class="github">
-                <fa-ico :icon="['fab', 'github']" />
-            </div>
-            <div class="garden">
-                <fa-ico :icon="['fab', 'twitter']" />
-            </div>
+            <a class="twitter">
+                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" />
+            </a>
+            <a class="linkedin">
+                <fa-ico class="fa-ico" :icon="['fab', 'linkedin']" />
+            </a>
+            <a class="github">
+                <fa-ico class="fa-ico" :icon="['fab', 'github']" />
+            </a>
+            <a class="garden">
+                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" />
+            </a>
         </div>
     </div>
 </template>
@@ -50,23 +51,47 @@
     place-items: center;
 }
 
+.buffer {
+    height: calc((100vh - 10rem)/2);
+}
+
 .sections {
     /* position: absolute; */
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     color: white;
     font-size: 3em;
     text-transform: lowercase;
-    text-align: center;
+    height: 10rem; /*rough estimate of selection height */
+    cursor: pointer;
+}
+.sections a:hover {
+    color: rgba(255, 255, 255, 0.452);
 }
 
 .links {
-    /* position: absolute; */
-    /* transform maintains translation relative to center */
-    transform: translateY();
-    border: 1px solid blue;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: calc((100vh - 10rem)/2);
+}
+
+.links a {
+    /* position: absolute; */
+    /* transform maintains translation relative to center */
     color: white;
-    font-size: 3em;
+    font-size: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.fa-ico {
+    cursor: pointer;
+}
+.fa-ico:hover {
+    color: rgba(255, 255, 255, 0.452);
 }
 </style>

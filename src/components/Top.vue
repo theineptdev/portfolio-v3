@@ -266,6 +266,15 @@ import * as dat from 'dat.gui';
 </script>
 
 <style scoped>
+* {
+    /* no select */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 .webgl
 {
     position: absolute;
@@ -283,9 +292,13 @@ import * as dat from 'dat.gui';
 .container {
     height: 100vh;
     width: 100%;
+    /* remove background to remove color */
+    background: rgb(216, 58, 58);
 }
 .title {
     color: white;
+    /* will invert title color and background colors */
+    /* mix-blend-mode: difference;  */
     font-size: 3em;
     text-transform: lowercase;
 }
