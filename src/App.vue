@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <button class="btn-nav" @click="toggleNav()">NAV</button>
+    <button class="btn-nav" @click="toggleNav()">
+      <fa-ico icon="user-secret" />
+    </button>
     <navi class="navi" />
     <top class="top" />
     <about id="about"/>
