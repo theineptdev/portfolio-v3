@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <button class="btn-nav" @click="toggleNav()">
-      <fa-ico icon="user-secret" />
-    </button>
+    <div class="btn-nav" @click="toggleNav()">
+      <fa-ico class="bars" icon="bars" />
+    </div>
     <navi class="navi" />
     <top class="top" />
     <about id="about"/>
@@ -54,9 +54,18 @@ export default {
 .btn-nav {
   z-index: 2;
   color: black;
-  background: white;
   position: fixed;
-  right: 0;
+  top: 1em;
+  right: 1em;
+  border: none;
+  font-size: 2em;
+  padding: 0;
+  display: flex; /* makes icon & div correct size */
+}
+
+.btn-nav:hover {
+  color: rgb(187, 42, 42);
+  cursor: pointer;
 }
 
 .navi {
