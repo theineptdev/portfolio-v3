@@ -6,10 +6,18 @@
             <div class="contact" @click="navTo('contact'), toggleNav()">contact</div>
         </div>
         <div class="links">
-            <div class="twitter">T</div>
-            <div class="linkedin">T</div>
-            <div class="github">T</div>
-            <div class="gardeb">T</div>
+            <div class="twitter">
+                <fa-ico :icon="['fab', 'twitter']" />
+            </div>
+            <div class="linkedin">
+                <fa-ico :icon="['fab', 'linkedin-in']" />
+            </div>
+            <div class="github">
+                <fa-ico :icon="['fab', 'github']" />
+            </div>
+            <div class="garden">
+                <fa-ico :icon="['fab', 'twitter']" />
+            </div>
         </div>
     </div>
 </template>
@@ -18,7 +26,6 @@
     export default {
         data() {
             return {
-
             }
         },
         methods: {
@@ -44,7 +51,7 @@
 }
 
 .sections {
-    position: absolute;
+    /* position: absolute; */
     border: 1px solid red;
     color: white;
     font-size: 3em;
@@ -53,11 +60,13 @@
 }
 
 .links {
-    position: absolute;
+    /* position: absolute; */
     /* transform maintains translation relative to center */
-    transform: translateY(15em);
+    transform: translateY();
     border: 1px solid blue;
     display: flex;
     flex-direction: row;
+    color: white;
+    font-size: 3em;
 }
 </style>

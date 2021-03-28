@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     navBoolean: true,
+    navIco: 'bars',
   },
   mutations: {
     toggleNav() {
@@ -19,6 +20,7 @@ export default new Vuex.Store({
           .style.visibility = 'visible';
         document.getElementsByClassName('navi')[0]
           .style.opacity = '100%';
+        this.state.navIco = 'times';
         this.state.navBoolean = !this.state.navBoolean
       } else {
         // document.getElementsByClassName('top')[0]
@@ -30,6 +32,7 @@ export default new Vuex.Store({
           .style.visibility = 'hidden';
         document.getElementsByClassName('navi')[0]
           .style.opacity = '0%';
+        this.state.navIco = 'bars';
         this.state.navBoolean = !this.state.navBoolean
       }
     },
@@ -44,4 +47,9 @@ export default new Vuex.Store({
   },
   actions: {},
   modules: {},
+  getters: {
+    navIco: (state) => {
+      return state.navIco;
+    }
+  }
 });

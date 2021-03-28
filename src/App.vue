@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <div class="btn-nav" @click="toggleNav()">
-      <fa-ico class="bars" icon="bars" />
+      <fa-ico :icon="['fa', this.navIco]" />
+    </div>
+    <div class="down-arrow">
+      <fa-ico class="down-ico" @click="navTo('about')" :icon="['fas', 'chevron-down']" />
     </div>
     <navi class="navi" />
     <top class="top" />
@@ -33,7 +36,22 @@ export default {
   },
   methods: {
     toggleNav() {
+      this.navIco = this.navClose;
       this.$store.commit("toggleNav");
+    },
+    navTo(section) {
+        this.$store.commit("navTo", section);
+    },
+  },
+  computed: {
+    navIco: {
+      get() {
+        return this.$store.state.navIco;
+      },
+      set() {
+        // vue wanted a setter to exist despite it not ne necessary in this scenario
+        return
+      }
     }
   }
 };
@@ -53,19 +71,44 @@ export default {
 
 .btn-nav {
   z-index: 2;
-  color: black;
+  color: white;
+  mix-blend-mode: difference; /* keep button visible */
   position: fixed;
-  top: 1em;
-  right: 1em;
+  top: 1.5em;
+  right: 1.5em;
   border: none;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 0;
   display: flex; /* makes icon & div correct size */
+  border: 1px solid red;
+  width: 1em;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-nav:hover {
   color: rgb(187, 42, 42);
   cursor: pointer;
+}
+
+
+.down-arrow {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0.5em;
+  font-size: 2em;
+}
+
+.down-ico {
+  z-index: 2;
+  color: white;
+  mix-blend-mode: difference; /* keep button visible */
+  border: 1px solid red;
+}
+.down-ico:hover {
+  color: red;
 }
 
 .navi {

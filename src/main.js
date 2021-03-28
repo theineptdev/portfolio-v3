@@ -3,10 +3,11 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import store from "./store";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faBars)
+library.add(faBars, faTimes, faChevronDown, faTwitter, faLinkedinIn, faGithub)
 
 Vue.component('fa-ico', FontAwesomeIcon)
 
