@@ -63,6 +63,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   padding: 0;
   margin: 0;
+  /* solves mobile scaling issue, but still don't know the cause... */
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -86,7 +88,6 @@ export default {
   cursor: pointer;
   transition: 0.15s ease-in-out;
 }
-
 
 .down-arrow {
   width: 100%;

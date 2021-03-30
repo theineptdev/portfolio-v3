@@ -49,6 +49,7 @@
     padding-right: 2em;
     text-transform: uppercase;
     transition: 0.15s ease-in-out;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -56,9 +57,6 @@
         color: white;
     }
 
-    .links a:hover {
-        cursor: pointer;
-    }
     .twitter:hover {
         color: rgb(109, 184, 255);
     }

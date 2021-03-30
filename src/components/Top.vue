@@ -152,14 +152,19 @@ import * as dat from 'dat.gui';
                 * Sizes
                 */
                 const sizes = {
-                    width: window.innerWidth,
-                    height: window.innerHeight,
+                    width: window.visualViewport.width,
+                    height: window.visualViewport.height
+                    // width: window.innerWidth,
+                    // height: window.innerHeight,
                 };
 
                 window.addEventListener('resize', () => {
+                    console.log('test');
                     // Update sizes
-                    sizes.width = window.innerWidth;
-                    sizes.height = window.innerHeight;
+                    sizes.width = window.visualViewport.width;
+                    sizes.height = window.visualViewport.height;
+                    // sizes.width = window.innerWidth;
+                    // sizes.height = window.innerHeight;
 
                     // Update camera
                     camera.aspect = sizes.width / sizes.height;
@@ -211,8 +216,10 @@ import * as dat from 'dat.gui';
                 let targetX = 0;
                 let targetY = 0;
 
-                const windowHalfX = window.innerWidth / 2;
-                const windowHalfY = window.innerHeight / 2;
+                const windowHalfX = window.visualViewport.width / 2;
+                const windowHalfY = window.visualViewport.height / 2;
+                // const windowHalfX = window.innerWidth / 2;
+                // const windowHalfY = window.innerHeight / 2;
 
                 function onDocumentMouseMove(event) {
                     mouseX = (event.clientX - windowHalfX);
@@ -275,8 +282,7 @@ import * as dat from 'dat.gui';
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
-.webgl
-{
+.webgl {
     position: absolute;
     top: 0;
     left: 0;
