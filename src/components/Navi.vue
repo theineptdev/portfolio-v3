@@ -7,16 +7,16 @@
             <a class="contact" @click="navTo('contact'), toggleNav()">contact</a>
         </div>
         <div class="links">
-            <a class="twitter">
+            <a href="https://twitter.com/theineptdev" target="_blank" class="twitter">
                 <fa-ico class="fa-ico" :icon="['fab', 'twitter']" title="Twitter" />
             </a>
-            <a class="linkedin">
+            <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" class="linkedin">
                 <fa-ico class="fa-ico" :icon="['fab', 'linkedin']" title="LinkedIn" />
             </a>
-            <a class="github">
+            <a href="https://github.com/theineptdev" target="_blank" class="github">
                 <fa-ico class="fa-ico" :icon="['fab', 'github']" title="GitHub" />
             </a>
-            <a class="garden">
+            <a href="https://garden.gunnerclark.dev/" target="_blank" class="garden">
                 <fa-ico class="fa-ico" :icon="['fab', 'twitter']" title="Garden" />
             </a>
         </div>

@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="title">Get In Touch</div>
-        <div class="email">contact@gunnerclark.dev</div>
+        <a class="email" href="mailto:contact@gunnerclark.dev?subject=Get In Touch" target="_blank">contact@gunnerclark.dev</a>
         <div class="links">
-            <a class="twitter">Twitter</a>
-            <a class="linkedin">LinkedIn</a>
-            <a class="github">GitHub</a>
-            <a class="garden">Blog</a>
+            <a href="https://twitter.com/theineptdev" target="_blank" class="twitter">Twitter</a>
+            <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" class="linkedin">LinkedIn</a>
+            <a href="https://github.com/theineptdev" target="_blank" class="github">GitHub</a>
+            <a href="https://garden.gunnerclark.dev/" target="_blank" class="garden">Blog</a>
         </div>
     </div>
 </template>
@@ -33,6 +33,7 @@
     text-transform: uppercase;
 }
 .email {
+    text-decoration: none;
     font-size: 2.75em;
     color: rgb(112, 112, 112);
     padding: 0.75em;
@@ -44,6 +45,8 @@
     flex-direction: row;
 }
 .links a {
+    text-decoration: none;
+    color: white;
     font-size: 1em;
     padding-left: 2em;
     padding-right: 2em;
