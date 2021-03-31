@@ -5,7 +5,7 @@
             <div class="lower">
                 <div class="btn-more" @click="toggleMore('200vh')">show more</div>
                 <div class="btn-less" @click="toggleMore('100vh')">show less</div>
-                |
+                <div class="line">|</div>
                 <a href="https://www.github.com/theineptdev" class="btn-github">visit github</a>
             </div>
         </div>
@@ -13,9 +13,9 @@
             <div class="title">GitHub Repo</div>
             <!-- <div v-for="n in 8" :key="n"> -->
             <div class="repo-ref">
-                created
+                <div class="list-name">∙ created ∙</div>
                 <div class="github-widget" data-user="theineptdev"></div>
-                forked
+                <div class="list-name">∙ forked ∙</div>
                 <div class="github-widget" data-user="theineptdev" data-options='{"forks":true}'></div>
                 <!-- <div class="repo-title">webapp-title</div>
                 <div class="repo-lang">javascript</div>
@@ -35,7 +35,7 @@
                 document.getElementsByClassName('repo-container')[0]
                     .style.height = height;
                 document.getElementsByClassName('upper')[0]
-                    .style.height = 'calc(' + height + ' - 5rem)';
+                    .style.height = 'calc(' + height + ' - 7rem)';
                 if (height === '200vh') {
                     document.getElementsByClassName('btn-less')[0]
                         .style.display = 'flex';
@@ -333,7 +333,8 @@
 .gw-repo-outer {
     margin: 0 auto;
     max-width: 35rem;
-    padding-bottom: 2.5rem;
+    /* padding-bottom was 2.5rem */
+    padding-bottom: 2rem;
     line-height: 2rem;
     cursor: auto;
 }
@@ -342,6 +343,9 @@
 .gw-repo {
     text-decoration: none;
 }
+.gw-repo:hover :is(.gw-name, .gw-lang, .gw-repo-desc) {
+    color: rgba(255, 255, 255, 0.8);
+}
 .gw-repo:nth-child(2n) {
 }
 .gw-title{
@@ -349,15 +353,12 @@
 }
 .gw-name {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.658);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1.75rem;
     text-transform: lowercase;
     display: inline-flex;
     padding-right: 0.25rem;
     overflow-y: hidden;
-}
-.gw-name:hover {
-    color: yellow;
 }
 .gw-repo-desc {
     text-decoration: none;
@@ -401,6 +402,12 @@
     transition: 0.5s ease-in-out;
 }
 
+.list-name {
+    color: rgba(255, 255, 255, 0.15);
+    text-transform: uppercase;
+    cursor: auto;
+}
+
 .btns {
     pointer-events: none;
     position: absolute;
@@ -410,7 +417,7 @@
     flex-direction: column;
 }
 .upper {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 7rem);
     transition: 0.5s ease-in-out;
 }
 .lower {
@@ -418,12 +425,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
+    height: 7rem;
     /* background: rgb(24, 24, 24); */
     background-image: linear-gradient(
         to bottom,
         rgb(24, 24, 24, 0) 0%,
-        rgb(24, 24, 24) 35%
+        rgb(24, 24, 24) 45%
     );
     color: rgba(255, 255, 255, 0.438);
 }
@@ -433,8 +440,13 @@
 .btn-more, .btn-less, .btn-github {
     padding-left: 1rem;
     padding-right: 1rem;
+    /* padding-bottom: 2.5rem; */
     cursor: pointer;
     transition: 0.5s ease-in-out;
+}
+.btn-more, .btn-less, .btn-github, .line {
+    /* lowers height in relation of gradient */
+    padding-top: 2.5rem;
 }
 .btn-github {
     text-decoration: none;
@@ -451,9 +463,10 @@
 }
 
 .title {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    padding: 1.75em;
+    /* 4.5rem originally */
+    padding: 3rem;
 }
 
 .repo-ref {
@@ -483,7 +496,6 @@
 
 @media only screen and (min-width: 768px) {
     .repo-ref:hover {
-        color: yellow;
     }
 }
 </style>
