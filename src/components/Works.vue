@@ -6,7 +6,7 @@
                 <div class="btn-more" @click="toggleMore('200vh')">show more</div>
                 <div class="btn-less" @click="toggleMore('100vh')">show less</div>
                 |
-                <div class="btn-github">visit github</div>
+                <a href="https://www.github.com/theineptdev" class="btn-github">visit github</a>
             </div>
         </div>
         <div class="repo-container">
@@ -435,6 +435,10 @@
     padding-right: 1rem;
     cursor: pointer;
     transition: 0.5s ease-in-out;
+}
+.btn-github {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.438);
 }
 :is(.btn-more, .btn-less, .btn-github):hover {
     color: white;
