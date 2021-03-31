@@ -6,7 +6,7 @@
                 <div class="btn-more" @click="toggleMore('200vh')">show more</div>
                 <div class="btn-less" @click="toggleMore('100vh')">show less</div>
                 <div class="line">|</div>
-                <a href="https://www.github.com/theineptdev" class="btn-github">visit github</a>
+                <a href="https://www.github.com/theineptdev" target="_blank" class="btn-github">visit github</a>
             </div>
         </div>
         <div class="repo-container">
@@ -343,6 +343,10 @@
 .gw-repo {
     text-decoration: none;
 }
+
+.gw-repo :is(.gw-name, .gw-lang, .gw-repo-desc) {
+    transition: 0.15s ease-in-out;
+}
 .gw-repo:hover :is(.gw-name, .gw-lang, .gw-repo-desc) {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -442,7 +446,7 @@
     padding-right: 1rem;
     /* padding-bottom: 2.5rem; */
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: 0.15s ease-in-out;
 }
 .btn-more, .btn-less, .btn-github, .line {
     /* lowers height in relation of gradient */
