@@ -13,8 +13,9 @@
             <div class="title">GitHub Repo</div>
             <!-- <div v-for="n in 8" :key="n"> -->
             <div class="repo-ref">
+                created
                 <div class="github-widget" data-user="theineptdev"></div>
-                ---
+                forked
                 <div class="github-widget" data-user="theineptdev" data-options='{"forks":true}'></div>
                 <!-- <div class="repo-title">webapp-title</div>
                 <div class="repo-lang">javascript</div>
@@ -103,6 +104,11 @@
                         cls: 'gw-repo-outer',
                         kids: [
                         make({
+                            // a & href for entire element; messes up CSS border though (quick fix)
+                            tag: 'a',
+                            href: repo.html_url,
+                            // opens link in new tab
+                            target: '_blank',
                             cls: 'gw-repo',
                             kids: [
                             make({
@@ -123,8 +129,6 @@
                                     })
                                     ]
                                 }), make({
-                                    tag: 'a',
-                                    href: repo.html_url,
                                     text: repo.name,
                                     cls: 'gw-name'
                                 }), repo.language != null ? make({
@@ -336,8 +340,7 @@
 .gw-repo-outer:nth-child(2n + 1) {
 }
 .gw-repo {
-    font-size: 1.25rem;
-    color: rgb(90, 90, 90);
+    text-decoration: none;
 }
 .gw-repo:nth-child(2n) {
 }
@@ -345,16 +348,21 @@
     text-align: center;
 }
 .gw-name {
+    text-decoration: none;
     color: rgba(255, 255, 255, 0.658);
     font-size: 1.75rem;
     text-transform: lowercase;
     display: inline-flex;
     padding-right: 0.25rem;
-    text-decoration: none;
     overflow-y: hidden;
 }
 .gw-name:hover {
     color: yellow;
+}
+.gw-repo-desc {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: rgb(90, 90, 90);
 }
 .gw-stats {
     display: none;
@@ -367,6 +375,7 @@
 .gw-forks {
 }
 .gw-lang {
+    text-decoration: none;
     font-size: 1.75rem;
     text-transform: uppercase;
     color: rgb(126, 126, 126);
