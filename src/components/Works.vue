@@ -1,11 +1,16 @@
 <template>
     <div class="container">
         <div class="btns">
-            <div class="btn-more">show more</div>
-            <div class="btn-github">visit github</div>
+            <div class="upper"></div>
+            <div class="lower">
+                <div class="btn-more" @click="toggleMore('200vh')">show more</div>
+                <div class="btn-less" @click="toggleMore('100vh')">show less</div>
+                |
+                <div class="btn-github">visit github</div>
+            </div>
         </div>
         <div class="repo-container">
-            <div class="title" @click="toggleMore('200vh')">GitHub Repo</div>
+            <div class="title">GitHub Repo</div>
             <div v-for="n in 8" :key="n">
             <div class="repo-ref">
                 <div class="repo-title">webapp-title</div>
@@ -25,7 +30,20 @@
                     .style.height = height;
                 document.getElementsByClassName('repo-container')[0]
                     .style.height = height;
-                console.log('this');
+                document.getElementsByClassName('upper')[0]
+                    .style.height = 'calc(' + height + ' - 5rem)';
+                if (height === '200vh') {
+                    document.getElementsByClassName('btn-less')[0]
+                        .style.display = 'flex';
+                    document.getElementsByClassName('btn-more')[0]
+                        .style.display = 'none';
+                } else {
+                    document.getElementsByClassName('btn-less')[0]
+                        .style.display = 'none';
+                    document.getElementsByClassName('btn-more')[0]
+                        .style.display = 'flex';
+                }
+                console.log(height);
             }
         }
     }
@@ -41,22 +59,53 @@
     flex-direction: column;
     text-align: center;
     overflow: hidden;
+    /* smooth transitions for elements within container */
+    transition: 0.5s ease-in-out;
 }
 
 .btns {
-    border: 1px solid red;
+    pointer-events: none;
     position: absolute;
     width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    place-content: center;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+}
+.upper {
+    height: calc(100vh - 5rem);
+    transition: 0.5s ease-in-out;
+}
+.lower {
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    /* background: rgb(24, 24, 24); */
+    background-image: linear-gradient(
+        to bottom,
+        rgb(24, 24, 24, 0) 0%,
+        rgb(24, 24, 24) 35%
+    );
+    color: rgba(255, 255, 255, 0.438);
+}
+.btn-less {
+    display: none;
+}
+.btn-more, .btn-less, .btn-github {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+:is(.btn-more, .btn-less, .btn-github):hover {
+    color: white;
 }
 
 .repo-container {
     height: 100vh;
     overflow: hidden;
-    border: 1px solid red;
+    transition: 0.5s ease-in-out;
 }
 
 .title {
