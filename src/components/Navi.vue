@@ -85,6 +85,7 @@
     font-size: 2em;
     padding-left: 1em;
     padding-right: 1em;
+    cursor: auto;
 }
 
 .fa-ico {
