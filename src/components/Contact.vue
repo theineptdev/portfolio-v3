@@ -1,7 +1,9 @@
 <template>
     <div class="container">
         <div class="title">Get In Touch</div>
-        <a class="email" href="mailto:contact@gunnerclark.dev?subject=Get In Touch" target="_blank">contact@gunnerclark.dev</a>
+        <div class="email-container">
+            <a class="email" href="mailto:contact@gunnerclark.dev?subject=Get In Touch" target="_blank">contact@gunnerclark.dev</a>
+        </div>
         <div class="links">
             <a href="https://twitter.com/theineptdev" target="_blank" class="twitter">Twitter</a>
             <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" class="linkedin">LinkedIn</a>
@@ -29,27 +31,36 @@
     align-items: center;    
 }
 .title {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     text-transform: uppercase;
+}
+.email-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* max-width: 30rem; */
+    padding: 2rem;
 }
 .email {
     text-decoration: none;
-    font-size: 2.75em;
+    /* maintains 2.75rem font size until viewport is too small */
+    font-size: min(7vw, 2.75rem);
     color: rgb(112, 112, 112);
-    padding: 0.75em;
     transition: 0.15s ease-in-out;
     cursor: pointer;
 }
 .links {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: row;
+    width: 100%;
+    max-width: 30rem;
 }
 .links a {
     text-decoration: none;
     color: white;
-    font-size: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
+    font-size: 1rem;
     text-transform: uppercase;
     transition: 0.15s ease-in-out;
     cursor: pointer;
@@ -59,7 +70,6 @@
     .email:hover {
         color: white;
     }
-
     .twitter:hover {
         color: rgb(109, 184, 255);
     }

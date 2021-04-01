@@ -342,6 +342,8 @@
 .gw-repo-outer {
     margin: 0 auto;
     max-width: 35rem;
+    /* prevents the width from being 100% on mobile / smaller screens */
+    width: 95%;
     /* padding-bottom was 2.5rem */
     padding-bottom: 2rem;
     line-height: 2rem;
@@ -486,10 +488,12 @@
 }
 
 .title {
+    border: 1px solid red;
     font-size: 2.5rem;
     text-transform: uppercase;
     /* 4.5rem originally */
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 /* .repo-ref {
