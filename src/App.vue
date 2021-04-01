@@ -73,7 +73,8 @@ export default {
 
 .btn-nav {
   z-index: 3;
-  color: rgb(105, 105, 105);
+  /* color: rgb(105, 105, 105); */
+  color: rgba(255, 255, 255, 0.75);
   mix-blend-mode: difference; /* keep button visible */
   position: fixed;
   top: 1.5em;
@@ -121,7 +122,7 @@ export default {
 
 @media only screen and (min-width: 768px) {
   .btn-nav:hover {
-    color: white;
+    color: rgba(255, 255, 255, 0.25);
   }
   
   .down-ico:hover {
