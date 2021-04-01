@@ -488,7 +488,6 @@
 }
 
 .title {
-    border: 1px solid red;
     font-size: 2.5rem;
     text-transform: uppercase;
     /* 4.5rem originally */
