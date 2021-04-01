@@ -1,14 +1,5 @@
 <template>
     <div class="container">
-        <div class="btns">
-            <div class="upper"></div>
-            <div class="lower">
-                <div class="btn-more" @click="toggleMore('200vh')">show more</div>
-                <div class="btn-less" @click="toggleMore('100vh')">show less</div>
-                <div class="line">|</div>
-                <a href="https://www.github.com/theineptdev" target="_blank" class="btn-github">visit github</a>
-            </div>
-        </div>
         <div class="repo-container">
             <div class="title">GitHub Repo</div>
             <!-- <div v-for="n in 8" :key="n"> -->
@@ -23,6 +14,15 @@
             </div>
             <!-- </div> -->
         </div>
+        <div class="btns">
+            <!-- <div class="upper"></div> -->
+            <div class="lower">
+                <div class="btn-more" @click="toggleMore('500vh')">show more</div>
+                <div class="btn-less" @click="toggleMore('100vh')">show less</div>
+                <div class="line">|</div>
+                <a href="https://www.github.com/theineptdev" target="_blank" class="btn-github">visit github</a>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -31,21 +31,30 @@
         methods: {
             toggleMore(height) {
                 document.getElementsByClassName('container')[3]
-                    .style.height = height;
+                    .style.maxHeight = height;
                 document.getElementsByClassName('repo-container')[0]
-                    .style.height = height;
-                document.getElementsByClassName('upper')[0]
-                    .style.height = 'calc(' + height + ' - 7rem)';
-                if (height === '200vh') {
+                    .style.maxHeight = height;
+                //change the height of the upper container to move the lower container
+                // setTimeout(function(){
+                //     const currentHeight = document.getElementsByClassName('repo-container')[0].clientHeight;
+                //     document.getElementsByClassName('upper')[0]
+                //         .style.height = 'calc(' + currentHeight + 'px - 7rem)';
+                //     console.log(currentHeight);
+                // }, 250);
+                if (height !== '100vh') {
                     document.getElementsByClassName('btn-less')[0]
                         .style.display = 'flex';
                     document.getElementsByClassName('btn-more')[0]
                         .style.display = 'none';
+                    // document.getElementsByClassName('btns')[0]
+                    //     .style.bottom = '0';
                 } else {
                     document.getElementsByClassName('btn-less')[0]
                         .style.display = 'none';
                     document.getElementsByClassName('btn-more')[0]
                         .style.display = 'flex';
+                    // document.getElementsByClassName('btns')[0]
+                    //     .style.bottom = '4.5rem';
                 }
                 console.log(height);
             },
@@ -396,47 +405,54 @@
 .container {
     color: white;
     background: #181818;
-    height: 100vh;
+    height: auto;
+    max-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     overflow: hidden;
     /* smooth transitions for elements within container */
-    transition: 0.5s ease-in-out;
+    transition: 0.15s ease-in-out;
 }
 
 .list-name {
     color: rgba(255, 255, 255, 0.15);
     text-transform: uppercase;
+    line-height: 2rem;
     cursor: auto;
 }
 
 .btns {
     pointer-events: none;
-    position: absolute;
+    /* sets relative to repo-container; repo-container overflow = visible & pushes btns out of view */
+    position: relative;
+    bottom: 4.5rem;
     width: 100%;
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
+    overflow: visible;
 }
 .upper {
-    height: calc(100vh - 7rem);
-    transition: 0.5s ease-in-out;
+    /* height: calc(100vh - 7rem); */
+    height: 100vh;
+    transition: 0.15s ease-in-out;
 }
 .lower {
     pointer-events: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7rem;
+    height: 4.5rem;
     /* background: rgb(24, 24, 24); */
     background-image: linear-gradient(
         to bottom,
-        rgb(24, 24, 24, 0) 0%,
+        rgba(0, 0, 0, 0) 0%,
         rgb(24, 24, 24) 45%
     );
     color: rgba(255, 255, 255, 0.438);
+    transition: 0.15s ease-in-out;
 }
 .btn-less {
     display: none;
@@ -450,7 +466,7 @@
 }
 .btn-more, .btn-less, .btn-github, .line {
     /* lowers height in relation of gradient */
-    padding-top: 2.5rem;
+    /* padding-top: 2.5rem; */
 }
 .btn-github {
     text-decoration: none;
@@ -461,9 +477,11 @@
 }
 
 .repo-container {
-    height: 100vh;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
+    height: auto;
+    max-height: 100vh;
+    /* overflow: hidden; */
+    overflow: visible;
+    transition: 0.15s ease-in-out;
 }
 
 .title {
@@ -473,13 +491,12 @@
     padding: 3rem;
 }
 
-.repo-ref {
+/* .repo-ref {
     margin: 0 auto;
     max-width: 35rem;
-    padding-bottom: 2.5rem;
     line-height: 2rem;
     cursor: pointer;
-}
+} */
 .repo-title {
     font-size: 1.75rem;
     text-transform: lowercase;
