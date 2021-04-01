@@ -33,7 +33,7 @@
                 document.getElementsByClassName('container')[3]
                     .style.maxHeight = height;
                 document.getElementsByClassName('repo-container')[0]
-                    .style.maxHeight = height;
+                    .style.maxHeight = 'calc(' + height + ' - 5rem)';
                 //change the height of the upper container to move the lower container
                 // setTimeout(function(){
                 //     const currentHeight = document.getElementsByClassName('repo-container')[0].clientHeight;
@@ -354,7 +354,7 @@
 }
 
 .gw-repo :is(.gw-name, .gw-lang, .gw-repo-desc) {
-    transition: 0.15s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 .gw-repo:hover :is(.gw-name, .gw-lang, .gw-repo-desc) {
     color: rgba(255, 255, 255, 0.8);
@@ -413,7 +413,7 @@
     text-align: center;
     overflow: hidden;
     /* smooth transitions for elements within container */
-    transition: 0.15s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .list-name {
@@ -426,8 +426,8 @@
 .btns {
     pointer-events: none;
     /* sets relative to repo-container; repo-container overflow = visible & pushes btns out of view */
-    position: relative;
-    bottom: 4.5rem;
+    position: flex;
+    /* bottom: 4.5rem; */
     width: 100%;
     /* height: 100vh; */
     display: flex;
@@ -437,7 +437,7 @@
 .upper {
     /* height: calc(100vh - 7rem); */
     height: 100vh;
-    transition: 0.15s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 .lower {
     pointer-events: auto;
@@ -452,7 +452,7 @@
         rgb(24, 24, 24) 45%
     );
     color: rgba(255, 255, 255, 0.438);
-    transition: 0.15s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 .btn-less {
     display: none;
@@ -478,10 +478,11 @@
 
 .repo-container {
     height: auto;
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    max-height: calc(100vh - 5rem);
     /* overflow: hidden; */
     overflow: visible;
-    transition: 0.15s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .title {
