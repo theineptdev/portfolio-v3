@@ -96,9 +96,14 @@
     transition: 0.15s ease-in-out;
 }
 
+.garden {
+}
+
 .garden-ico {
     height: 2rem;
-    content: url('../assets/icons/theineptdevLogoInvFullHollow.png');
+    /* content: url('../assets/icons/theineptdevLogoInvFullHollow.png'); */
+    content: url('../assets/icons/gardenLogoInvFullNoFlipHollow.png');
+    filter: grayscale(100) brightness(2);
     transition: 0.15s ease-in-out;
 }
 
@@ -120,8 +125,8 @@
         color: rgb(83, 218, 70);
     }
     .garden-ico:hover {
-        content: url('../assets/icons/gardenLogoInvFullNoFlipHollow.png');
-        transition: 0.15s ease-in-out;
+        /* content: url('../assets/icons/gardenLogoInvFullNoFlipHollow.png'); */
+        filter: grayscale(0) brightness(1);
     }
 }
 </style>
