@@ -53,6 +53,9 @@ export default {
         return
       }
     }
+  },
+  created() {
+    document.title = "inept";
   }
 };
 </script>
