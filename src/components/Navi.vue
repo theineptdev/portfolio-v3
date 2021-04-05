@@ -17,7 +17,9 @@
                 <fa-ico class="fa-ico" :icon="['fab', 'github']" title="GitHub" />
             </a>
             <a href="https://garden.gunnerclark.dev/" target="_blank" class="garden">
-                <fa-ico class="fa-ico" :icon="['fab', 'twitter']" title="Garden" />
+                <div class="fa-ico" title="Garden">
+                    <div class="garden-ico" />
+                </div>
             </a>
         </div>
     </div>
@@ -63,7 +65,8 @@
     text-align: center;
     font-size: 3em;
     text-transform: lowercase;
-    height: 10rem; /*rough estimate of selection height */
+    /*rough estimate of selection height */
+    /* height: 10rem; */
     cursor: pointer;
 }
 .sections a {
@@ -82,14 +85,20 @@
     /* position: absolute; */
     /* transform maintains translation relative to center */
     color: white;
-    font-size: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     cursor: auto;
 }
 
 .fa-ico {
     cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+
+.garden-ico {
+    height: 2rem;
+    content: url('../assets/icons/theineptdevLogoInvFullHollow.png');
     transition: 0.15s ease-in-out;
 }
 
@@ -99,16 +108,20 @@
     }
     
     .twitter .fa-ico:hover {
-        color: rgb(109, 184, 255);
+        color: rgb(73, 167, 255);
     }
     .linkedin .fa-ico:hover {
-        color: rgb(105, 88, 255);
+        color: rgb(52, 147, 255);
     }
     .github .fa-ico:hover {
-        color: rgb(221, 110, 255);
+        color: rgb(235, 87, 255);
     }
     .garden .fa-ico:hover {
         color: rgb(83, 218, 70);
+    }
+    .garden-ico:hover {
+        content: url('../assets/icons/gardenLogoInvFullNoFlipHollow.png');
+        transition: 0.15s ease-in-out;
     }
 }
 </style>

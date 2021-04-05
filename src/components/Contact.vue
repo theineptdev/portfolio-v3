@@ -2,13 +2,13 @@
     <div class="container">
         <div class="title">Get In Touch</div>
         <div class="email-container">
-            <a class="email" href="mailto:contact@gunnerclark.dev?subject=Get In Touch" target="_blank">contact@gunnerclark.dev</a>
+            <a class="email" href="mailto:contact@gunnerclark.dev?subject=Website: [Your Subject]" target="_blank">contact@gunnerclark.dev</a>
         </div>
         <div class="links">
-            <a href="https://twitter.com/theineptdev" target="_blank" class="twitter">Twitter</a>
-            <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" class="linkedin">LinkedIn</a>
-            <a href="https://github.com/theineptdev" target="_blank" class="github">GitHub</a>
-            <a href="https://garden.gunnerclark.dev/" target="_blank" class="garden">Blog</a>
+            <a href="https://twitter.com/theineptdev" target="_blank" title="Twitter" class="twitter">Twitter</a>
+            <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" title="LinkedIn" class="linkedin">LinkedIn</a>
+            <a href="https://github.com/theineptdev" target="_blank" title="GitHub" class="github">GitHub</a>
+            <a href="https://garden.gunnerclark.dev/" target="_blank" title="Garden" class="garden">Garden</a>
         </div>
     </div>
 </template>
