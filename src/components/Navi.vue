@@ -119,7 +119,7 @@
         color: rgb(52, 147, 255);
     }
     .github .fa-ico:hover {
-        color: rgb(235, 87, 255);
+        color: rgb(207, 96, 221);
     }
     .garden .fa-ico:hover {
         color: rgb(83, 218, 70);

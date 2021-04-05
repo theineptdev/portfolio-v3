@@ -71,16 +71,16 @@
         color: white;
     }
     .twitter:hover {
-        color: rgb(109, 184, 255);
+        color: rgb(73, 167, 255);
     }
     .linkedin:hover {
-        color: rgb(105, 88, 255);
+        color: rgb(52, 147, 255);
     }
     .github:hover {
-        color: rgb(221, 110, 255);
+        color: rgb(207, 96, 221);
     }
     .garden:hover {
-        color: rgb(83, 218, 70);
+        color: rgb(134, 212, 126);
     }
 }
 </style>
