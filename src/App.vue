@@ -110,13 +110,13 @@ export default {
 .navi {
   z-index: 2;
   visibility: hidden;
-  opacity: 0%;
+  opacity: 0;
   transition: 0.15s ease-in-out;
 }
 
 .top {
   visibility: visible;
-  opacity: 100%;
+  opacity: 1;
   transition: 0.15s ease-in-out;
 }
 
