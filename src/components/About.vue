@@ -16,7 +16,7 @@
             return {
                 me: "<b>Hi, I'm Gunner Clark.</b> I bring ideas to life through the mediums of web design and webXR development.",
                 add: "When I'm not building websites or XR experiences, I'm sharing my knowledge and discoveries in health and fitness.",
-                go: "To find out what I'm currently working on, or even just what's on my mind, you can find out <a href='https://garden.gunnerclark.dev/' target='_blank' title='digital garden'>here</a>  on my personal blog.",
+                go: "To find out what I'm currently working on, or even just what's on my mind, you can find out <a href='https://garden.theinept.dev/' target='_blank' title='digital garden'>here</a>  on my personal blog.",
             }
         }
     }
