@@ -8,7 +8,7 @@
             <a href="https://twitter.com/theineptdev" target="_blank" title="Twitter" class="twitter">Twitter</a>
             <a href="https://www.linkedin.com/in/gunnerclark" target="_blank" title="LinkedIn" class="linkedin">LinkedIn</a>
             <a href="https://github.com/theineptdev" target="_blank" title="GitHub" class="github">GitHub</a>
-            <a href="https://garden.gunnerclark.dev/" target="_blank" title="Garden" class="garden">Garden</a>
+            <a href="https://garden.theinept.dev/" target="_blank" title="Garden" class="garden">Garden</a>
         </div>
     </div>
 </template>

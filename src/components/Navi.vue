@@ -16,7 +16,7 @@
             <a href="https://github.com/theineptdev" target="_blank" class="github">
                 <fa-ico class="fa-ico" :icon="['fab', 'github']" title="GitHub" />
             </a>
-            <a href="https://garden.gunnerclark.dev/" target="_blank" class="garden">
+            <a href="https://garden.theinept.dev/" target="_blank" class="garden">
                 <div class="fa-ico" title="Garden">
                     <div class="garden-ico" />
                 </div>
