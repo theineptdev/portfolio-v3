@@ -73,7 +73,7 @@
         min-height: 25rem;
     } */
     .go :is(a:hover) {
-        color: rgb(83, 218, 70);
+        color: rgb(134, 212, 126);
     }
 }
 </style>
