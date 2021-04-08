@@ -6,9 +6,9 @@ Created to familiarize myself with Figma and to better implement web design fund
 
 # Screenshots
 
-<p float="left">
-  <img src="src/assets/screenshots/home.png" width="400">
-  <img src="src/assets/screenshots/works.png" width="400">
+<p align="center">
+  <img src="src/assets/screenshots/home.png" width="49%">
+  <img src="src/assets/screenshots/works.png" width="49%">
 </p>
 
 # Technology
