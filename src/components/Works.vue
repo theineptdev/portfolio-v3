@@ -33,7 +33,7 @@
                 document.getElementsByClassName('container')[3]
                     .style.maxHeight = height;
                 document.getElementsByClassName('repo-container')[0]
-                    .style.maxHeight = 'calc(' + height + ' - 5rem)';
+                    .style.maxHeight = 'calc(' + height + ' - 4.5rem)';
                 //change the height of the upper container to move the lower container
                 // setTimeout(function(){
                 //     const currentHeight = document.getElementsByClassName('repo-container')[0].clientHeight;
@@ -480,7 +480,7 @@
 .repo-container {
     height: auto;
     /* max-height: 100vh; */
-    max-height: calc(100vh - 5rem);
+    max-height: calc(100vh - 4.5rem);
     /* overflow: hidden; */
     overflow: visible;
     transition: 0.25s ease-in-out;
