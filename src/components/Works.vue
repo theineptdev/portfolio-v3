@@ -88,11 +88,17 @@
                     opts = div.getAttribute('data-options');
                     opts = typeof opts === 'string' ? JSON.parse(opts) : {};
                     siteRepoNames = [(user + ".github.com").toLowerCase(), (user + ".github.io").toLowerCase()];
-                    sortBy = opts.sortBy || 'watchers';
+                    // sortBy = opts.sortBy || 'watchers';
+                    sortBy = opts.sortBy || 'created_at';
                     limit = parseInt(opts.limit) || 2e308;
                     made = 0;
+                    // ref = payloadData.sort(function(a, b) {
+                    //     console.log(a[sortBy]);
+                    //     console.log(sortBy);
+                    //     return b[sortBy] - a[sortBy];
+                    // });
                     ref = payloadData.sort(function(a, b) {
-                    return b[sortBy] - a[sortBy];
+                        return new Date(b[sortBy]) - new Date(a[sortBy]);
                     });
                     results = [];
                     for (j = 0, len = ref.length; j < len; j++) {
@@ -387,6 +393,7 @@
 .gw-forks {
 }
 .gw-lang {
+    overflow: hidden;
     text-decoration: none;
     font-size: 1.75rem;
     text-transform: uppercase;
